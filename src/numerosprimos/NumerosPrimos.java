@@ -13,11 +13,11 @@ public class NumerosPrimos {
     //LIstar los numeros según el numero de digitos indicado
     //Considero solo hasta numeros menores a 100000 (5 digitos), 
     //por el hecho de k buscar numeros primos a partir de 6 digitos, el proceso se hace muy lento.
-    public static boolean p = false;
+    public static boolean primo = false;
 
     public static void main(String arg[]) {
         int numDigitos = 0;
-        int ndigitos = 0;
+        int numeroMenorDe1000 = 0;
         numDigitos = Integer.parseInt(arg[0]);
         if (numDigitos <= 0) {
             System.out.println("Ingrese como parámetro, un numero de digitos correcto (mayor que 0): ");
@@ -31,14 +31,14 @@ public class NumerosPrimos {
                 divisionEntera = divisionEntera / 10;
                 contador++;
             }
-            ndigitos = contador;
+            numeroMenorDe1000 = contador;
 
-            if (ndigitos == numDigitos) {
+            if (numeroMenorDe1000 == numDigitos) {
                 if (i < 4) {
-                    p = true;
+                    primo = true;
                 } else {
                     if (i % 2 == 0) {
-                        p = false;
+                        primo = false;
                     } else {
                         int contador1 = 0;
                         int i1 = 1;
@@ -58,12 +58,12 @@ public class NumerosPrimos {
                         }
 
                         if (contador1 == 1) {
-                            p = true;
+                            primo = true;
                         }
                     }
                 }
 
-                if (p == true) {
+                if (primo == true) {
                     System.out.println(i);
                 }
             }
